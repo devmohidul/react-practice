@@ -1,8 +1,5 @@
 import "./App.css";
-import AllInfo from "./components/AllInfo";
-import Gallery from "./components/Gallery";
-import Props1 from "./components/Props1";
-import Props2 from "./components/Props2";
+import Map from "./components/Map";
 
 const person = {
   h1: {
@@ -20,12 +17,14 @@ function App() {
 
   return (
     <>
-      <Gallery />
+      {/* <Gallery />
       <h1 style={person.h1}>{name} is a software developer</h1>
       <AllInfo nperson={nperson} age={age} gender={gender} />
       <Props1>
         <Props2 />
       </Props1>
+      <PackingList /> */}
+      <Map />
     </>
   );
 }
