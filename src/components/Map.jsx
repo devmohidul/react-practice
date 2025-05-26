@@ -41,6 +41,25 @@ const people = [
 
 export default function Map() {
   const chemist = people.filter((person) => person.profession === "chemist");
+  const scientists = people
+    .filter((person) => person.profession != "chemist")
+    .map((scientist) => (
+      <li
+        key={scientist.id}
+        style={{ display: "flex", padding: "15px", alignItems: "center" }}
+      >
+        <img
+          src={getImageUrl(scientist)}
+          alt={scientist.name}
+          style={{ borderRadius: "50%", padding: "10px" }}
+        />
+        <p>
+          <b>{scientist.name}:</b>
+          {" " + scientist.profession + " "}
+          known for {scientist.accomplishment}
+        </p>
+      </li>
+    ));
   const listItems = chemist.map((person) => (
     <li
       key={person.id}
@@ -60,8 +79,10 @@ export default function Map() {
   ));
   return (
     <>
-      <h1>Hello Lists</h1>
+      <h2>Chemists</h2>
       <ul>{listItems}</ul>
+      <h2>Scientists</h2>
+      <ul>{scientists}</ul>
     </>
   );
 }

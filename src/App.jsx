@@ -1,5 +1,7 @@
 import "./App.css";
 import Map from "./components/Map";
+import Recipelist from "./components/Recipelist";
+import Time from "./components/Time";
 
 const person = {
   h1: {
@@ -24,7 +26,9 @@ function App() {
         <Props2 />
       </Props1>
       <PackingList /> */}
+      <Recipelist />
       <Map />
+      <Time time={new Date()} />
     </>
   );
 }
