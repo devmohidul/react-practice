@@ -1,6 +1,7 @@
 import "./App.css";
 import Button from "./components/Button";
 import Time from "./components/Time";
+import Toolbar from "./components/Toolbar";
 
 // const person = {
 //   h1: {
@@ -29,6 +30,7 @@ function App() {
       <Map /> */}
       <Time time={new Date()} />
       <Button />
+      <Toolbar />
     </>
   );
 }
