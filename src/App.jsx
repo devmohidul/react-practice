@@ -1,21 +1,20 @@
 import "./App.css";
-import Map from "./components/Map";
-import Recipelist from "./components/Recipelist";
+import Button from "./components/Button";
 import Time from "./components/Time";
 
-const person = {
-  h1: {
-    color: "red",
-    backgroundColor: "yellow",
-  },
-};
+// const person = {
+//   h1: {
+//     color: "red",
+//     backgroundColor: "yellow",
+//   },
+// };
 
-const nperson = "Mohidul Hasan";
-const age = 34;
-const gender = "Male";
+// const nperson = "Mohidul Hasan";
+// const age = 34;
+// const gender = "Male";
 
 function App() {
-  const name = "Mohidul Hasan";
+  // const name = "Mohidul Hasan";
 
   return (
     <>
@@ -26,9 +25,10 @@ function App() {
         <Props2 />
       </Props1>
       <PackingList /> */}
-      <Recipelist />
-      <Map />
+      {/* <Recipelist />
+      <Map /> */}
       <Time time={new Date()} />
+      <Button />
     </>
   );
 }
