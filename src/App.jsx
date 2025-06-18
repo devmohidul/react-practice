@@ -1,7 +1,5 @@
 import "./App.css";
-import Button from "./components/Button";
-import Time from "./components/Time";
-import Toolbar from "./components/Toolbar";
+import Toolbar1 from "./components/Toolbar1";
 
 // const person = {
 //   h1: {
@@ -28,9 +26,10 @@ function App() {
       <PackingList /> */}
       {/* <Recipelist />
       <Map /> */}
-      <Time time={new Date()} />
-      <Button />
-      <Toolbar />
+      {/* <Time time={new Date()} /> */}
+      {/* <Button /> */}
+      {/* <Toolbar /> */}
+      <Toolbar1 />
     </>
   );
 }
