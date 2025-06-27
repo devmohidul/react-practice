@@ -1,5 +1,6 @@
+import { useState } from "react";
 import "./App.css";
-import Toolbar1 from "./components/Toolbar1";
+import { sculptureList } from "./components/Data1.js";
 
 // const person = {
 //   h1: {
@@ -14,6 +15,13 @@ import Toolbar1 from "./components/Toolbar1";
 
 function App() {
   // const name = "Mohidul Hasan";
+  const [index, setIndex] = useState(0);
+
+  function handleClick() {
+    setIndex(index + 1);
+  }
+
+  let sculpture = sculptureList[index];
 
   return (
     <>
@@ -29,7 +37,17 @@ function App() {
       {/* <Time time={new Date()} /> */}
       {/* <Button /> */}
       {/* <Toolbar /> */}
-      <Toolbar1 />
+      {/* <Toolbar1 /> */}
+      <button onClick={handleClick}>Next</button>
+      <h2>
+        <i>{sculpture.name} </i>
+        by {sculpture.artist}
+      </h2>
+      <h3>
+        ({index + 1} of {sculptureList.length})
+      </h3>
+      <img src={sculpture.url} alt={sculpture.alt} />
+      <p>{sculpture.description}</p>
     </>
   );
 }
