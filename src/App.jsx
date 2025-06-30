@@ -1,5 +1,5 @@
 import "./App.css";
-import Myfrom from "./components/Myform";
+import Add from "./components/Add";
 
 // const person = {
 //   h1: {
@@ -66,7 +66,8 @@ function App() {
       {showMore && <p>{sculpture.description}</p>} */}
       {/* <RequestTracker /> */}
       {/* <MovingDot /> */}
-      <Myfrom />
+      {/* <Myfrom /> */}
+      <Add />
     </>
   );
 }
