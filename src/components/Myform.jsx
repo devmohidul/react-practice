@@ -5,12 +5,25 @@ export default function Myfrom() {
     firstName: "Mohidul",
     lastName: "Hasan",
     email: "m@gmail.com",
+    contact: {
+      fb: "mm@gmail.com",
+    },
   });
 
   const handleChange = (e) => {
     setPerson({
       ...person,
       [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleContactChange = (e) => {
+    setPerson({
+      ...person,
+      contact: {
+        ...person.contact,
+        fb: e.target.value,
+      },
     });
   };
 
@@ -43,11 +56,21 @@ export default function Myfrom() {
           onChange={handleChange}
         />
       </label>
+      <label>
+        FB:{" "}
+        <input
+          type="text"
+          name="fb"
+          value={person.contact.fb}
+          onChange={handleContactChange}
+        />
+      </label>
 
       <p>
         {person.firstName} {""}
         {person.lastName} {""}
         {person.email} {""}
+        {person.contact.fb} {""}
       </p>
     </>
   );
