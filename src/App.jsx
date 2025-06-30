@@ -1,5 +1,5 @@
 import "./App.css";
-import RequestTracker from "./components/RequestTracker";
+import Myfrom from "./components/Myform";
 
 // const person = {
 //   h1: {
@@ -64,7 +64,9 @@ function App() {
       </button> */}
       {/* <img src={sculpture.url} alt={sculpture.alt} />
       {showMore && <p>{sculpture.description}</p>} */}
-      <RequestTracker />
+      {/* <RequestTracker /> */}
+      {/* <MovingDot /> */}
+      <Myfrom />
     </>
   );
 }
