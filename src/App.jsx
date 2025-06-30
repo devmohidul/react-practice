@@ -1,6 +1,5 @@
-import { useState } from "react";
 import "./App.css";
-import { sculptureList } from "./components/Data1.js";
+import RequestTracker from "./components/RequestTracker";
 
 // const person = {
 //   h1: {
@@ -15,13 +14,26 @@ import { sculptureList } from "./components/Data1.js";
 
 function App() {
   // const name = "Mohidul Hasan";
-  const [index, setIndex] = useState(0);
+  // const [index, setIndex] = useState(0);
+  // const [showMore, setShowMore] = useState(false);
 
-  function handleClick() {
-    setIndex(index + 1);
-  }
+  // const handleClick = () => {
+  //   if (index < sculptureList.length - 1) {
+  //     setIndex(index + 1);
+  //   }
+  // };
 
-  let sculpture = sculptureList[index];
+  // const handlePrevClick = () => {
+  //   if (index > 0) {
+  //     setIndex(index - 1);
+  //   }
+  // };
+
+  // function handleMoreClick() {
+  //   setShowMore(!showMore);
+  // }
+
+  // let sculpture = sculptureList[index];
 
   return (
     <>
@@ -38,6 +50,7 @@ function App() {
       {/* <Button /> */}
       {/* <Toolbar /> */}
       {/* <Toolbar1 /> */}
+      {/* <button onClick={handlePrevClick}>Previous</button>
       <button onClick={handleClick}>Next</button>
       <h2>
         <i>{sculpture.name} </i>
@@ -46,8 +59,12 @@ function App() {
       <h3>
         ({index + 1} of {sculptureList.length})
       </h3>
-      <img src={sculpture.url} alt={sculpture.alt} />
-      <p>{sculpture.description}</p>
+      <button onClick={handleMoreClick}>
+        {showMore ? "Hide" : "Show"} Details
+      </button> */}
+      {/* <img src={sculpture.url} alt={sculpture.alt} />
+      {showMore && <p>{sculpture.description}</p>} */}
+      <RequestTracker />
     </>
   );
 }
