@@ -1,5 +1,5 @@
 import "./App.css";
-import Add from "./components/Add";
+import Delete from "./components/Delete";
 
 // const person = {
 //   h1: {
@@ -67,7 +67,8 @@ function App() {
       {/* <RequestTracker /> */}
       {/* <MovingDot /> */}
       {/* <Myfrom /> */}
-      <Add />
+      {/* <Add /> */}
+      <Delete />
     </>
   );
 }
