@@ -1,31 +1,37 @@
-import { useState } from "react";
+import { useImmer } from "use-immer";
 
 export default function Myfrom() {
-  const [person, setPerson] = useState({
+  const [person, updatePerson] = useImmer({
     firstName: "Mohidul",
     lastName: "Hasan",
     email: "m@gmail.com",
     contact: {
       fb: "mm@gmail.com",
+      types: {
+        category: "social media",
+      },
     },
   });
 
   const handleChange = (e) => {
-    setPerson({
-      ...person,
-      [e.target.name]: e.target.value,
+    const { name, value } = e.target;
+    updatePerson((draft) => {
+      const keys = name.split(".");
+      if (keys.length === 1) {
+        draft[keys[0]] = value;
+      } else if (keys.length === 2) {
+        draft[keys[0]][keys[1]] = value;
+      } else if (keys.length === 3) {
+        draft[keys[0]][keys[1]][keys[2]] = value;
+      }
     });
   };
 
-  const handleContactChange = (e) => {
-    setPerson({
-      ...person,
-      contact: {
-        ...person.contact,
-        fb: e.target.value,
-      },
-    });
-  };
+  // const handleContactChange = (e) => {
+  //   updatePerson((draft) => {
+  //     draft.contact.fb = e.target.value;
+  //   });
+  // };
 
   return (
     <>
@@ -60,9 +66,18 @@ export default function Myfrom() {
         FB:{" "}
         <input
           type="text"
-          name="fb"
+          name="contact.fb"
           value={person.contact.fb}
-          onChange={handleContactChange}
+          onChange={handleChange}
+        />
+      </label>
+      <label>
+        Types:{" "}
+        <input
+          type="text"
+          name="contact.types.category"
+          value={person.contact.types.category}
+          onChange={handleChange}
         />
       </label>
 
@@ -71,6 +86,7 @@ export default function Myfrom() {
         {person.lastName} {""}
         {person.email} {""}
         {person.contact.fb} {""}
+        {person.contact.types.category}
       </p>
     </>
   );
