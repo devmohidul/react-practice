@@ -1,5 +1,5 @@
 import "./App.css";
-import Delete from "./components/Delete";
+import MovingCircle from "./components/MovingCircle";
 
 // const person = {
 //   h1: {
@@ -68,7 +68,8 @@ function App() {
       {/* <MovingDot /> */}
       {/* <Myfrom /> */}
       {/* <Add /> */}
-      <Delete />
+      {/* <Delete /> */}
+      <MovingCircle />
     </>
   );
 }
