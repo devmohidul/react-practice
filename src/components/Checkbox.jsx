@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useImmer } from "use-immer";
 
 const initialList = [
   { id: 0, title: "Big Bellies", seen: false },
@@ -7,35 +7,21 @@ const initialList = [
 ];
 
 export default function Checkbox() {
-  const [myList, setMyList] = useState(initialList);
-  const [yourList, setYourList] = useState(initialList);
+  const [myList, updateMyList] = useImmer(initialList);
+  const [yourList, updateYourList] = useImmer(initialList);
 
   const handleToggleMyList = (artworkId, nextSeen) => {
-    const myNextList = myList.map((artwork) => {
-      if (artwork.id === artworkId) {
-        return {
-          ...artwork,
-          seen: nextSeen,
-        };
-      } else {
-        return artwork;
-      }
+    updateMyList((draft) => {
+      const artwork = draft.find((a) => a.id === artworkId);
+      artwork.seen = nextSeen;
     });
-    setMyList(myNextList);
   };
 
   const handleToggleYourList = (artworkId, nextSeen) => {
-    const yourNextList = yourList.map((artwork) => {
-      if (artwork.id === artworkId) {
-        return {
-          ...artwork,
-          seen: nextSeen,
-        };
-      } else {
-        return artwork;
-      }
+    updateYourList((draft) => {
+      const artwork = draft.find((a) => a.id === artworkId);
+      artwork.seen = nextSeen;
     });
-    setYourList(yourNextList);
   };
 
   return (
