@@ -1,5 +1,5 @@
 import "./App.css";
-import InsertItem from "./components/InsertItem";
+import Checkbox from "./components/Checkbox";
 
 // const person = {
 //   h1: {
@@ -70,7 +70,8 @@ function App() {
       {/* <Add /> */}
       {/* <Delete /> */}
       {/* <MovingCircle /> */}
-      <InsertItem />
+      {/* <InsertItem /> */}
+      <Checkbox />
     </>
   );
 }
