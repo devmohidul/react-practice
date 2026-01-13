@@ -1,10 +1,10 @@
 import "./App.css";
-import Focus from "./components/Focus";
+import CatFriendsList from "./components/CatFriedsList";
 
 function App() {
   return (
     <>
-      <Focus />
+      <CatFriendsList />
     </>
   );
 }
