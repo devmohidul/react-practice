@@ -1,10 +1,10 @@
 import "./App.css";
-import Stopwatch from "./components/Stopwatch";
+import Focus from "./components/Focus";
 
 function App() {
   return (
     <>
-      <Stopwatch />
+      <Focus />
     </>
   );
 }
