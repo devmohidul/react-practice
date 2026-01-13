@@ -1,10 +1,10 @@
 import "./App.css";
-import ListItems1 from "./components/ListItems1";
+import Stopwatch from "./components/Stopwatch";
 
 function App() {
   return (
     <>
-      <ListItems1 />
+      <Stopwatch />
     </>
   );
 }
